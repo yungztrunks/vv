@@ -1,0 +1,18 @@
+# --- svelte npm usw ---
+vv/node_modules/
+vv/.svelte-kit/
+vv/build/
+vv/.env
+vv/.env.*
+
+# --- pocketbase ---
+/pocketbase
+
+# --- anderes ---
+.DS_Store
+Thumbs.db
+
+# --- vs code usw ---
+.vscode/
+.idea/
+*.log
