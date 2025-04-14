@@ -1,13 +1,13 @@
 # --- svelte npm usw ---
-vv/node_modules/
-vv/.svelte-kit/
-vv/build/
-vv/.env
-vv/.env.*
-vv/.output
-vv/.vercel
-vv/.netlify
-vv/.wrangler
+vv00/node_modules/
+vv00/.svelte-kit/
+vv00/build/
+vv00/.env
+vv00/.env.*
+vv00/.output
+vv00/.vercel
+vv00/.netlify
+vv00/.wrangler
 
 # --- pocketbase ---
 /pocketbase
