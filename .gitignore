@@ -4,6 +4,10 @@ vv/.svelte-kit/
 vv/build/
 vv/.env
 vv/.env.*
+vv/.output
+vv/.vercel
+vv/.netlify
+vv/.wrangler
 
 # --- pocketbase ---
 /pocketbase
