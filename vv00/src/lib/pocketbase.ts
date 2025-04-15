@@ -19,6 +19,10 @@ export async function getPostsInFolder(folderId: string) {
         });
 }
 
+export async function getSinglePost(postId: string) {
+    return await pb.collection('posts').getOne(postId);
+}
+
 export async function getCommentsOfPost(postId: string) {
     return await pb.collection('comments').getFullList({
         filter: `post = "${postId}"`,
