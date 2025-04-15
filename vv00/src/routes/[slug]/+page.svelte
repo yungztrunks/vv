@@ -4,6 +4,7 @@
 </script>
 
 <h1>{folder.name}</h1>
+<h3>{folder.description}</h3>
 
 {#if posts.length > 0}
     <ul>
