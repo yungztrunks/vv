@@ -17,4 +17,3 @@
 {:else}
     <p>i haven't written about {folder.name} yet</p>
 {/if}
-
