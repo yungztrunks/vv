@@ -9,6 +9,14 @@ pb.authStore.onChange(() => {
 	currentUser.set(pb.authStore.record);
 });
 
+export function isLoggedIn() {
+    return pb.authStore.isValid;
+}
+
+export function logout() {
+    pb.authStore.clear();
+}
+
 export function isAdmin() {
 	return pb.authStore.record?.role === 'admin';
 }
