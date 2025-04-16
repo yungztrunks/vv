@@ -7,7 +7,7 @@ export const currentUser = writable(pb.authStore.record);
 
 pb.authStore.onChange(() => {
 	if (browser) {
-		currentUser.set(pb.authStore.model);
+		currentUser.set(pb.authStore.record);
 	}
 });
 
