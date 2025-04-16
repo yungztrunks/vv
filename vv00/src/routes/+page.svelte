@@ -3,8 +3,15 @@
     const { folders } = data;
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<!-- for testing -->
+<a href="/admin">admin</a>
+<a href="/login">login</a>
+<a href="/profile">profile</a>
+<a href="/editor">editor</a>
+
+<br>
+<br>
+<br>
 
 {#if folders.length === 0}
     <p>i am empty.</p>
