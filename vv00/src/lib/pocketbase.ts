@@ -6,9 +6,7 @@ export const pb = new PocketBase('http://127.0.0.1:8090');
 export const currentUser = writable(pb.authStore.record);
 
 pb.authStore.onChange(() => {
-	if (browser) {
-		currentUser.set(pb.authStore.record);
-	}
+	currentUser.set(pb.authStore.record);
 });
 
 export function isAdmin() {
