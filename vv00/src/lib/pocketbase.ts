@@ -48,3 +48,23 @@ export async function getCommentsOfPost(postId: string) {
         sort: '-created',
     });
 }
+
+export async function getUsers() {
+    return await pb.collection('users').getFullList({
+        sort: 'username',
+    });
+}
+
+export async function getPostsByUser(userId: string) {
+    return await pb.collection('posts').getFullList({
+        filter: `author = "${userId}"`,
+        sort: '-created',
+    });
+}
+
+export async function getAllPosts() {
+    return await pb.collection('posts').getFullList({
+        sort: '-created',
+        expand: 'author,folder',
+    });
+}
