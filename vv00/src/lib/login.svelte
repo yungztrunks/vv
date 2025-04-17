@@ -1,6 +1,5 @@
 <script lang="ts">
     import { pb, currentUser } from "$lib/pocketbase";
-    import {goto} from "$app/navigation";
     
     let username: string;
     let email: string;
@@ -9,7 +8,6 @@
     async function login() {
         try{
             await pb.collection("users").authWithPassword(username, password);
-            goto("/profile");
         }
         catch(error) {
             console.error("login error", error);
