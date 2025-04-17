@@ -2,13 +2,6 @@ import { redirect, type Handle } from "@sveltejs/kit";
 import { pb } from "$lib/pocketbase";
 
 export const handle: Handle = async ({ event, resolve }) => {
-    if (
-        event.url.pathname === "/login" ||
-        event.url.pathname === "/favicon.png"
-    ) {
-        return await resolve(event);
-    }
-
     const token = event.cookies.get("pb_auth");
     if (token) {
         pb.authStore.loadFromCookie(token);
