@@ -8,7 +8,9 @@
     
     async function login() {
         try{
-            await pb.collection("users").authWithPassword(username, password);
+            const data = await pb.collection("users").authWithPassword(username, password);
+            console.log("login success", username);
+            document.cookie = pb.authStore.exportToCookie({httpOnly: false, secure: false, sameSite: "Lax"});
             goto("/profile");
         }
         catch(error) {
