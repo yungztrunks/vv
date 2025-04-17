@@ -6,6 +6,15 @@ export const handle: Handle = async ({ event, resolve }) => {
     if (token) {
         pb.authStore.loadFromCookie(token);
     }
+
+    if (event.url.pathname === "/login" && pb.authStore.isValid) {
+        throw redirect(303, "/profile");
+    }
+
+    if (event.url.pathname === "/profile" && !pb.authStore.isValid) {
+        throw redirect(303, "/login");
+    }
+
     if (event.url.pathname.startsWith("/admin")) {
         if (!pb.authStore.isValid) {
             throw redirect(
