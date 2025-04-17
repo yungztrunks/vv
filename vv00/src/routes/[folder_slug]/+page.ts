@@ -10,10 +10,10 @@ export const load: PageLoad = async ({ params }) => {
     * for the needed function parameter calls
     */
     try {
-        const { slug } = params;
+        const { folder_slug } = params;
         
         const folder_fetch = await pb.collection('folders').getList(1, 1, {
-            filter: `slug = "${slug}"`,
+            filter: `slug = "${folder_slug}"`,
         });
         
         if (folder_fetch.items.length === 0) {
@@ -24,7 +24,7 @@ export const load: PageLoad = async ({ params }) => {
         
         const posts = await getPostsInFolder(folder.id);
         
-        return { 
+        return {
             folder,
             posts
         };

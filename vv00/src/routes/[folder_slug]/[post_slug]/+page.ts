@@ -4,7 +4,7 @@ import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ params }) => {
   try {
-    const { slug, post_slug } = params;
+    const { folder_slug, post_slug } = params;
 
     const postRecords = await pb.collection('posts').getList(1, 1, {
       filter: `slug = "${post_slug}"`,
