@@ -6,10 +6,14 @@
 
     async function signout() {
         await logout();
+        goto('/');
     }
 </script>
 
 <h1>Profile Page</h1>
 
-<p>Signed in as {$user?.username}</p>
-<button on:click={signout}>Sign out</button>
+{#if $user}
+    <p>logged in as {$user.username}</p>
+{:else}
+    <p>not logged in</p>
+{/if}
