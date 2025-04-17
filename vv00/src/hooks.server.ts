@@ -25,13 +25,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
         const user = pb.authStore.model;
 
-        const isAdmin =
-            user &&
-            (user.role === "admin" ||
-                user.isAdmin === true ||
-                user.expand?.role?.name === "admin");
-
-        if (!isAdmin) {
+        if (user && user.role != 'admin') {
             throw redirect(303, "/profile?error=access_denied");
         }
     }
