@@ -22,8 +22,7 @@ export const handle: Handle = async ({ event, resolve }) => {
                 "/login?redirect=" + encodeURIComponent(event.url.pathname)
             );
         }
-
-        const user = pb.authStore.model;
+        const user = pb.authStore.record;
 
         if (user && user.role != 'admin') {
             throw redirect(303, "/profile?error=access_denied");
