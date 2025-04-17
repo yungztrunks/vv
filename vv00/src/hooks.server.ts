@@ -7,13 +7,13 @@ export const handle: Handle = async ({ event, resolve }) => {
         pb.authStore.loadFromCookie(token);
     }
 
-    if (event.url.pathname === "/login" && pb.authStore.isValid) {
-        throw redirect(303, "/profile");
-    }
-
-    if (event.url.pathname === "/profile" && !pb.authStore.isValid) {
-        throw redirect(303, "/login");
-    }
+    // if (event.url.pathname === "/login" && pb.authStore.isValid) {
+    //     throw redirect(303, "/profile");
+    // }
+    // maybe in the future?
+    // if (event.url.pathname === "/profile" && !pb.authStore.isValid) {
+    //     throw redirect(303, "/login");
+    // }
 
     if (event.url.pathname.startsWith("/admin")) {
         if (!pb.authStore.isValid) {
@@ -28,10 +28,6 @@ export const handle: Handle = async ({ event, resolve }) => {
             throw redirect(303, "/profile?error=access_denied");
         }
     }
-
-    console.log(
-        `[Server Hook] Path: ${event.url.pathname}, Auth valid: ${pb.authStore.isValid}`
-    );
 
     const response = await resolve(event);
 
